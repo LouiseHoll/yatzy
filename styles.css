@@ -6,10 +6,8 @@ display: inline-block;
 text-align: center;
 }
 .center{
-    position: relative;
     text-align: center;
-    display: inline-block;
-    margin-block-start: auto;
+    margin: auto;
 }
 p{
     text-align: center;
