@@ -19,7 +19,7 @@ table.box input{
 }
 table {
     animation-duration: 2s;
-    animation-name: swirlswoosh;
+    animation-name: menyswoosh;
  }
 
 #johnny{
@@ -75,6 +75,15 @@ input:focus{
     animation-duration: 4s;
     animation-name: swirlswoosh;
 }
+@keyframes menyswoosh{
+    from{
+         transform: rotate(0deg);
+ 
+    }
+    to {
+ transform: rotate(1080deg);
+    }
+ }
 
 @keyframes swirlswoosh{
     from {
