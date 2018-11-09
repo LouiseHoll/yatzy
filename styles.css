@@ -17,6 +17,10 @@ table.box input{
     width: 100%;
     height: 100%;
 }
+table {
+    animation-duration: 2s;
+    animation-name: swirlswoosh;
+ }
 
 #johnny{
     width: 50%;
