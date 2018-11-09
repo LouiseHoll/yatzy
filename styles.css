@@ -36,6 +36,9 @@ table.box th {
     text-align: left;
     background-color: aqua;
 }
+table.box td {
+    text-align: left;
+}
 
 td:nth-child(even){
     background-color: rgb(94, 255, 1);
