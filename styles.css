@@ -17,6 +17,10 @@ table.box input{
     width: 100%;
     height: 100%;
 }
+table {
+    animation-duration: 2s;
+    animation-name: menyswoosh;
+ }
 
 #johnny{
     width: 50%;
@@ -35,6 +39,9 @@ table, td, th{
 table.box th {
     text-align: left;
     background-color: aqua;
+}
+table.box td {
+    text-align: left;
 }
 
 td:nth-child(even){
@@ -68,6 +75,15 @@ input:focus{
     animation-duration: 4s;
     animation-name: swirlswoosh;
 }
+@keyframes menyswoosh{
+    from{
+         transform: rotate(0deg);
+ 
+    }
+    to {
+ transform: rotate(1080deg);
+    }
+ }
 
 @keyframes swirlswoosh{
     from {
