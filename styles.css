@@ -6,10 +6,7 @@ body{
 display: inline-block;
 text-align: center;
 }
-.center{
-    text-align: center;
-    margin: auto;
-}
+
 .nav-link {
     margin-right: 1px;
 }
@@ -41,6 +38,39 @@ text-align: center;
 p{
     text-align: center;
 }
+
+.container a:first-child {
+    width: 100%;
+}
+.container button {
+    justify-content: center;
+}
+.container {
+    display: flex;
+    margin: auto;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.starleft {
+    padding: 25px;
+    animation-name: menyswoosh;
+    animation-iteration-count: infinite;
+    animation-duration: 5000ms;
+    animation-timing-function: linear;
+}
+.starright {
+    padding: 25px;
+    order: 1;
+    animation-name: menyswoosh;
+   animation-iteration-count: infinite;
+   animation-duration: 5000ms;
+   animation-timing-function: linear;
+       animation-direction: reverse;
+
+}
+
 table.box input{
     border-width: 0;
     width: 100%;
@@ -93,13 +123,16 @@ input{
     background-color: inherit;
     transition: width 2s, height 2s, background-color 2s, transform 0.5s;
 }
+
 input:focus{
     background-color: rgb(255, 153, 1);
     width: 110%;
     height: 110%;
     transform: rotate(360deg);
 }
-
+.container .logga {
+    width: 100%;
+}
 #logo {
     animation-duration: 4s;
     animation-name: swirlswoosh;
