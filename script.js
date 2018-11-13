@@ -54,3 +54,20 @@ function checkNaN(player) {
     fives.addEventListener("change", sumPlayer1);    
     var six = document.getElementById("Player1_six");
     six.addEventListener("change", sumPlayer1);
+
+
+    function getRandomInt () {
+        return Math.floor(Math.random() * (6 - 1)) + 1;
+    }
+
+    function saveDice() {
+        if (document.getElementById("dice1save") == false) {
+            document.getElementById("dice1").value = getRandomInt();
+        }
+
+    }
+
+    var roll = document.getElementById("roll");
+    roll.addEventListener("click", saveDice(){
+
+    })
