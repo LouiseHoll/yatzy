@@ -24,8 +24,30 @@
                 </div>
             
                 <div class="starright">
-                        <img  src="img/kattstar.png" alt="spinning yatzystars">
-                </div>
+                        <div>
+                                <input type="checkbox" id="dice1save">
+                                <input type="text" id="dice1" placeholder="Tärningskast" value="0">
+                            </div>
+                            <div>
+                                <input type="checkbox" id="dice2save">
+                                <input type="text" id="dice2" placeholder="Tärningskast" value="0">
+                            </div>
+                            <div>
+                                <input type="checkbox" id="dice3save">
+                                <input type="text" id="dice3">
+                            </div>
+                            <div>
+                                <input type="checkbox" id="dice4save">
+                                <input type="text" id="dice4">
+                            </div>
+                            <div>
+                                <input type="checkbox" id="dice5save">
+                                <input type="text" id="dice5">
+                            </div>
+                    
+                            <div>
+                                <button id="roll">Kasta tärning</button>
+                            </div>                </div>
         <table class="box center">
             <tr>
                 <th> Spelare </th>
@@ -37,58 +59,59 @@
             <tr>
                 <td>Ettor</td>
 
-                <td><input id="Player1_ones" type="number" min="0" max="5" placeholder="score"></td>
-                <td><input type="number" min="0" max="5" placeholder="score"></td>
-                <td><input type="number" min="0" max="5" placeholder="score"></td>
-                <td><input type="number" min="0" max="5" placeholder="score"></td>
+                <td><input class="player1 ones" type="number" min="0" max="5" placeholder="score"></td>
+                <td><input class="player2 ones" type="number" min="0" max="5" placeholder="score"></td>
+                <td><input class="player3 ones" type="number" min="0" max="5" placeholder="score"></td>
+                <td><input class="player3 ones" type="number" min="0" max="5" placeholder="score"></td>
+
             </tr>
             <tr>
                 <td>Tvåor</td>
 
-                <td><input id="Player1_twos" type="number" min="0" max="10" placeholder="score"></td>
-                <td><input type="number" min="0" max="10" placeholder="score"></td>
-                <td><input type="number" min="0" max="10" placeholder="score"></td>
-                <td><input type="number" min="0" max="10" placeholder="score"></td>
+                <td><input class="player1 twos" type="number" min="0" max="10" placeholder="score"></td>
+                <td><input class="player2 twos" type="number" min="0" max="10" placeholder="score"></td>
+                <td><input class="player3 twos" type="number" min="0" max="10" placeholder="score"></td>
+                <td><input class="player4 twos" type="number" min="0" max="10" placeholder="score"></td>
             </tr>
             <tr>
                 <td>treor</td>
 
-                <td><input id="Player1_threes" type="number" min="0" max="15" placeholder="score"></td>
-                <td><input type="number" min="0" max="15" placeholder="score"></td>
-                <td><input type="number" min="0" max="15" placeholder="score"></td>
-                <td><input type="number" min="0" max="15" placeholder="score"></td>
+                <td><input class="player1 threes" type="number" min="0" max="15" placeholder="score"></td>
+                <td><input class="player2 threes" type="number" min="0" max="15" placeholder="score"></td>
+                <td><input class="player3 threes" type="number" min="0" max="15" placeholder="score"></td>
+                <td><input class="player4 threes" type="number" min="0" max="15" placeholder="score"></td>
             </tr>
             <tr>
                 <td>Fyror</td>
 
-                <td><input id="Player1_fours" type="number" min="0" max="20" placeholder="score"></td>
-                <td><input type="number" min="0" max="20" placeholder="score"></td>
-                <td><input type="number" min="0" max="20" placeholder="score"></td>
-                <td><input type="number" min="0" max="20" placeholder="score"></td>
+                <td><input class="player1 fours" type="number" min="0" max="20" placeholder="score"></td>
+                <td><input class="player2 fours" type="number" min="0" max="20" placeholder="score"></td>
+                <td><input class="player3 fours" type="number" min="0" max="20" placeholder="score"></td>
+                <td><input class="player4 fours" type="number" min="0" max="20" placeholder="score"></td>
             </tr>
             <tr>
                 <td>Femmor</td>
 
-                <td><input id="Player1_fives" type="number" min="0" max="25" placeholder="score"></td>
-                <td><input type="number" min="0" max="25" placeholder="score"></td>
-                <td><input type="number" min="0" max="25" placeholder="score"></td>
-                <td><input type="number" min="0" max="25" placeholder="score"></td>
+                <td><input class="player1 fives" type="number" min="0" max="25" placeholder="score"></td>
+                <td><input class="player2 fives" type="number" min="0" max="25" placeholder="score"></td>
+                <td><input class="player3 fives" type="number" min="0" max="25" placeholder="score"></td>
+                <td><input class="player4 fives" type="number" min="0" max="25" placeholder="score"></td>
             </tr>
             <tr>
                 <td>Sexor</td>
 
-                <td><input id="Player1_six" type="number" min="0" max="30" placeholder="score"></td>
-                <td><input type="number" min="0" max="30" placeholder="score"></td>
-                <td><input type="number" min="0" max="30" placeholder="score"></td>
-                <td><input type="number" min="0" max="30" placeholder="score"></td>
+                <td><input class="player1 six" type="number" min="0" max="30" placeholder="score"></td>
+                <td><input class="player2 six" type="number" min="0" max="30" placeholder="score"></td>
+                <td><input class="player3 six" type="number" min="0" max="30" placeholder="score"></td>
+                <td><input class="player4 six" type="number" min="0" max="30" placeholder="score"></td>
             </tr>
             <tr>
                 <th>Summa</th>
 
-                <th><input id="Player1_sum" type="number" min="0" max="105" placeholder="score"></th>
-                <th><input type="number" min="0" max="105" placeholder="score"></th>
-                <th><input type="number" min="0" max="105" placeholder="score"></th>
-                <th><input type="number" min="0" max="105" placeholder="score"></th>
+                <th><input id="sum1" class="player1 sum" type="number" min="0" max="105" placeholder="score"></th>
+                <th><input id="sum2" class="player2 sum" type="number" min="0" max="105" placeholder="score"></th>
+                <th><input id="sum3" class="player3 sum" type="number" min="0" max="105" placeholder="score"></th>
+                <th><input id="sum4" class="player4 sum" type="number" min="0" max="105" placeholder="score"></th>
             </tr>
             <tr>
                 <th>Bonus</th>
@@ -145,18 +168,18 @@
             <tr>
                 <td>Liten stege</td>
 
-                <td><input type="number" min="0" max="15" placeholder="score"></td>
-                <td><input type="number" min="0" max="15" placeholder="score"></td>
-                <td><input type="number" min="0" max="15" placeholder="score"></td>
-                <td><input type="number" min="0" max="15" placeholder="score"></td>
+                <td><input class="player1 threes" type="number" min="0" max="15" placeholder="score"></td>
+                <td><input class="player1 threes" type="number" min="0" max="15" placeholder="score"></td>
+                <td><input class="player1 threes" type="number" min="0" max="15" placeholder="score"></td>
+                <td><input class="player1 threes" type="number" min="0" max="15" placeholder="score"></td>
             </tr>
             <tr>
                 <td>Stor stege</td>
 
-                <td><input type="number" min="0" max="20" placeholder="score"></td>
-                <td><input type="number" min="0" max="20" placeholder="score"></td>
-                <td><input type="number" min="0" max="20" placeholder="score"></td>
-                <td><input type="number" min="0" max="20" placeholder="score"></td>
+                <td><input class="player1 fours" type="number" min="0" max="20" placeholder="score"></td>
+                <td><input class="player1 fours" type="number" min="0" max="20" placeholder="score"></td>
+                <td><input class="player1 fours" type="number" min="0" max="20" placeholder="score"></td>
+                <td><input class="player1 fours" type="number" min="0" max="20" placeholder="score"></td>
             </tr>
             <tr>
                 <td>Kåk</td>
@@ -169,10 +192,10 @@
             <tr>
                 <td>Chans</td>
 
-                <td><input type="number" min="0" max="30" placeholder="score"></td>
-                <td><input type="number" min="0" max="30" placeholder="score"></td>
-                <td><input type="number" min="0" max="30" placeholder="score"></td>
-                <td><input type="number" min="0" max="30" placeholder="score"></td>
+                <td><input class="player1 six" type="number" min="0" max="30" placeholder="score"></td>
+                <td><input class="player1 six" type="number" min="0" max="30" placeholder="score"></td>
+                <td><input class="player1 six" type="number" min="0" max="30" placeholder="score"></td>
+                <td><input class="player1 six" type="number" min="0" max="30" placeholder="score"></td>
             </tr>
             <tr>
                 <td>Yatzy</td>
@@ -205,8 +228,8 @@
         </table>
         </div>
     </div>
-<script src="script.js">
-</script>
+<script src="script.js"></script>
+    <script src="game.js"></script>
 </body>
 
 </html>

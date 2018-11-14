@@ -25,10 +25,10 @@ sum.addEventListener("click", function (event)
 */
 
 function checkNaN(player) {
-    if (document.getElementById(player).value === ""){
+    if (document.getElementsByClassName(player).value === ""){
     return 0;
     }
-    else return document.getElementById(player).value;
+    else return document.getElementsByClassName(player).value;
 }
     function sumPlayer1 (){
     let setSum= document.getElementById("Player1_sum")
@@ -40,10 +40,30 @@ function checkNaN(player) {
     let aSumSix = parseInt(checkNaN("Player1_six"));
     let sum = aSumOnes + aSumTwos +aSumThrees + aSumFours + aSumFives +aSumSix;
     setSum.value = sum;
+
 }
 
-    var ones = document.getElementById("Player1_ones");
-    ones.addEventListener("change", sumPlayer1);
+function sumPlayer() {
+    var score = document.getElementsByClassName("player1")
+    var sum = 0;
+    for (let i = 0; i < score.length; i++) {
+        sum += parseInt(checkNaN(score[i]));
+    }
+console.log(sum);
+}
+var ones = document.getElementsByClassName("player1");
+
+for (i = 0; i < ones.length; i++) {
+    ones[i].addEventListener("change", sumPlayer);
+}
+
+
+
+
+
+/*
+    var ones = document.getElementsByClassName("player1 ones");
+    ones.addEventListener("change", sumPlayer);
     var twos = document.getElementById("Player1_twos");
     twos.addEventListener("change", sumPlayer1);    
     var threes = document.getElementById("Player1_threes");
@@ -54,4 +74,4 @@ function checkNaN(player) {
     fives.addEventListener("change", sumPlayer1);    
     var six = document.getElementById("Player1_six");
     six.addEventListener("change", sumPlayer1);
-
+*/

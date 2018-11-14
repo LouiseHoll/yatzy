@@ -60,14 +60,16 @@ p{
     animation-duration: 5000ms;
     animation-timing-function: linear;
 }
-.starright {
+ .starright {
     padding: 25px;
     order: 1;
+    /*
     animation-name: menyswoosh;
    animation-iteration-count: infinite;
    animation-duration: 5000ms;
    animation-timing-function: linear;
        animation-direction: reverse;
+       */
 
 }
 
@@ -126,8 +128,6 @@ input{
 
 input:focus{
     background-color: rgb(255, 153, 1);
-    width: 110%;
-    height: 110%;
     transform: rotate(360deg);
 }
 .container .logga {
