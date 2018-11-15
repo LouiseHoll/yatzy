@@ -101,3 +101,6 @@ function sumPlayerB() {
     setSum.value =parseInt(upperScore)+tSum;
 }
 
+function game(){
+    
+}
