@@ -59,10 +59,10 @@ function checkNaN(player) {
 /* Sätter eventlisteners på alla inputs i övre delen*/
 var inputListeners = document.querySelectorAll(".player1");
 for (var i = 0; i < inputListeners.length; i++) {
-    inputListeners[i].addEventListener("change", sumPlayer);
+    inputListeners[i].addEventListener("change", sumPlayer, 1);
 }
 /* Räknar ut summan i övre delen*/
-function sumPlayer() {
+function sumPlayer(playerNo) {
     var bonus1 = document.querySelector("#bonus1");
     var setSum = document.querySelector("#sum1");
     var score = document.querySelectorAll(".player1");
@@ -74,16 +74,13 @@ function sumPlayer() {
             sum += tempSum;
         }
     }
+
     setSum.value = sum;
-
-
     if (sum >= 63) {
 
         bonus1.innerHTML = "50";
     }
 }
-
-
 
 /* NEDRE DELEN AV SPELPLANEN */
 /* Sätter eventlisteners på alla inputs i nedre delen*/
@@ -106,21 +103,64 @@ function sumPlayerB() {
             tSum += tempSum;
         }
     }
-    
     if (bonus1.innerHTML == "50") {
-      
         setSum.value = parseInt(upperScore) + tSum + 50;
-    }
-    else{
+    } else {
         setSum.value = parseInt(upperScore) + tSum;
     }
+}
+// PLAYER 2==========================================================
+/* ÖVRE DELEN AV SPELPLANEN */
+/* Sätter eventlisteners på alla inputs i övre delen*/
+var inputListenersP2 = document.querySelectorAll(".player2");
+for (var i = 0; i < inputListenersP2.length; i++) {
+    inputListenersP2[i].addEventListener("change", sumPlayer2);
+}
+/* Räknar ut summan i övre delen*/
+function sumPlayer2() {
+    var bonus2 = document.querySelector("#bonus2");
+    var setSum2 = document.querySelector("#sum2");
+    var score2 = document.querySelectorAll(".player2");
+    var sum2 = 0;
 
+    for (let i = 0; i < score2.length; i++) {
+        let tempSum = parseInt(score2[i].value);
+        if (!isNaN(tempSum)) {
+            sum2 += tempSum;
+        }
+    }
 
+    setSum2.value = sum2;
+    if (sum2 >= 63) {
+
+        bonus2.innerHTML = "50";
+    }
 }
 
+/* NEDRE DELEN AV SPELPLANEN */
+/* Sätter eventlisteners på alla inputs i nedre delen*/
 
+var inputListeners = document.querySelectorAll(".player2b");
 
+for (var i = 0; i < inputListeners.length; i++) {
+    inputListeners[i].addEventListener("change", sumPlayerB);
+}
+/* Räknar ut summan i nedre delen*/
+function sumPlayerB() {
+    var setSum = document.querySelector(".totalSum2");
+    var score = document.querySelectorAll(".player2b");
+    var upperScore = document.querySelector("#sum2").value;
+    var tSum = 0;
 
-function game() {
-
+    for (let i = 0; i < score.length; i++) {
+        let tempSum = parseInt(score[i].value);
+        if (!isNaN(tempSum)) {
+            tSum += tempSum;
+        }
+    }
+    if (bonus1.innerHTML == "50") {
+        setSum.value = parseInt(upperScore) + tSum + 50;
+    } else {
+        setSum.value = parseInt(upperScore) + tSum;
+    }
 }
