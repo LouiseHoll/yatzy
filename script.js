@@ -56,13 +56,14 @@ function checkNaN(player) {
     six.addEventListener("change", sumPlayer1);
 */
 /* ÖVRE DELEN AV SPELPLANEN */
-/* Sätter eventlisteners på alla inputs i övre delen*/ 
+/* Sätter eventlisteners på alla inputs i övre delen*/
 var inputListeners = document.querySelectorAll(".player1");
 for (var i = 0; i < inputListeners.length; i++) {
     inputListeners[i].addEventListener("change", sumPlayer);
 }
-/* Räknar ut summan i övre delen*/ 
+/* Räknar ut summan i övre delen*/
 function sumPlayer() {
+    var bonus1 = document.querySelector("#bonus1");
     var setSum = document.querySelector("#sum1");
     var score = document.querySelectorAll(".player1");
     var sum = 0;
@@ -74,14 +75,21 @@ function sumPlayer() {
         }
     }
     setSum.value = sum;
+
+
+    if (sum >= 63) {
+
+        bonus1.innerHTML = "50";
+    }
 }
 
 
 
 /* NEDRE DELEN AV SPELPLANEN */
-/* Sätter eventlisteners på alla inputs i nedre delen*/ 
+/* Sätter eventlisteners på alla inputs i nedre delen*/
 
 var inputListeners = document.querySelectorAll(".player1b");
+
 for (var i = 0; i < inputListeners.length; i++) {
     inputListeners[i].addEventListener("change", sumPlayerB);
 }
@@ -89,7 +97,7 @@ for (var i = 0; i < inputListeners.length; i++) {
 function sumPlayerB() {
     var setSum = document.querySelector(".totalSum1");
     var score = document.querySelectorAll(".player1b");
-    var upperScore= document.querySelector("#sum1").value;
+    var upperScore = document.querySelector("#sum1").value;
     var tSum = 0;
 
     for (let i = 0; i < score.length; i++) {
@@ -98,9 +106,21 @@ function sumPlayerB() {
             tSum += tempSum;
         }
     }
-    setSum.value =parseInt(upperScore)+tSum;
+    
+    if (bonus1.innerHTML == "50") {
+      
+        setSum.value = parseInt(upperScore) + tSum + 50;
+    }
+    else{
+        setSum.value = parseInt(upperScore) + tSum;
+    }
+
+
 }
 
-function game(){
-    
+
+
+
+function game() {
+
 }

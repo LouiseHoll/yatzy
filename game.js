@@ -22,11 +22,13 @@ function sumOfThrow() {
     var skrivHar = document.querySelector("#countHere");
     var sum = 0;
     for (var i = 0; i < sumOfThrow.length; i++) {
-        sum += parseInt(sumOfThrow[i].value);
-       
-        
+        if (sumOfThrow[i].previousElementSibling.checked){
+
+            sum += parseInt(sumOfThrow[i].value);
+        }
+console.log(sum);
     }
-    skrivHar.innerHTML=" "+sum;
+    skrivHar.innerHTML = " " + sum;
 }
 /*
 //placerar värdet av tärningarna i rätt ruta
