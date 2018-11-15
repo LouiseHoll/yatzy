@@ -143,24 +143,26 @@ function sumPlayer2() {
 var inputListeners = document.querySelectorAll(".player2b");
 
 for (var i = 0; i < inputListeners.length; i++) {
-    inputListeners[i].addEventListener("change", sumPlayerB);
+    inputListeners[i].addEventListener("change", sumPlayerB2);
 }
 /* Räknar ut summan i nedre delen*/
-function sumPlayerB() {
-    var setSum = document.querySelector(".totalSum2");
-    var score = document.querySelectorAll(".player2b");
-    var upperScore = document.querySelector("#sum2").value;
-    var tSum = 0;
+function sumPlayerB2() {
+    var setSum2 = document.querySelector(".totalSum2");
+    var score2 = document.querySelectorAll(".player2b");
+    var upperScore2 = document.querySelector("#sum2").value;
+    var tSum2 = 0;
 
-    for (let i = 0; i < score.length; i++) {
-        let tempSum = parseInt(score[i].value);
-        if (!isNaN(tempSum)) {
-            tSum += tempSum;
+    for (let i = 0; i < score2.length; i++) {
+        let tempSum2 = parseInt(score2[i].value);
+        if (!isNaN(tempSum2)) {
+            tSum2 += tempSum2;
         }
     }
-    if (bonus1.innerHTML == "50") {
-        setSum.value = parseInt(upperScore) + tSum + 50;
+    if (bonus2.innerHTML == "50") {
+        console.log("hejhej");
+        setSum2.value = parseInt(upperScore2) + tSum2 + 50;
     } else {
-        setSum.value = parseInt(upperScore) + tSum;
+        console.log("hejhej");
+        setSum2.value = parseInt(upperScore2) + tSum2;
     }
 }
