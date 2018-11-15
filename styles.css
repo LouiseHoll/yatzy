@@ -72,6 +72,19 @@ p{
        */
 
 }
+#transform {
+    -webkit-transition: all 2s ease;  
+    -moz-transition: all 2s ease;  
+    -o-transition: all 2s ease;  
+    -ms-transition: all 2s ease;  
+    transition: all 2s ease;
+  }
+  
+#transform-active {
+    transform: rotate(1080deg);
+   /* background-image: url(../yatzy/img/grumpycat.jpg);*/
+   background-color: blueviolet;
+  }
 
 table.box input{
     border-width: 0;
@@ -158,3 +171,4 @@ input:focus{
         transform: rotate(1080deg);
     }
 }
+
