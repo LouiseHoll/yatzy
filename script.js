@@ -140,10 +140,11 @@ function sumPlayer2() {
 /* NEDRE DELEN AV SPELPLANEN */
 /* Sätter eventlisteners på alla inputs i nedre delen*/
 
-var inputListeners = document.querySelectorAll(".player2b");
+var inputListenersP2 = document.querySelectorAll(".player2b");
 
-for (var i = 0; i < inputListeners.length; i++) {
-    inputListeners[i].addEventListener("change", sumPlayerB2);
+for (var i = 0; i < inputListenersP2.length; i++) {
+    inputListenersP2[i].addEventListener("change", sumPlayerB2);
+    console.log("hej hej!")
 }
 /* Räknar ut summan i nedre delen*/
 function sumPlayerB2() {
@@ -152,6 +153,8 @@ function sumPlayerB2() {
     var upperScore2 = document.querySelector("#sum2").value;
     var tSum2 = 0;
 
+    console.log(upperScore2);
+
     for (let i = 0; i < score2.length; i++) {
         let tempSum2 = parseInt(score2[i].value);
         if (!isNaN(tempSum2)) {
@@ -159,10 +162,8 @@ function sumPlayerB2() {
         }
     }
     if (bonus2.innerHTML == "50") {
-        console.log("hejhej");
         setSum2.value = parseInt(upperScore2) + tSum2 + 50;
     } else {
-        console.log("hejhej");
         setSum2.value = parseInt(upperScore2) + tSum2;
     }
 }
