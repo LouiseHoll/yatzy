@@ -10,44 +10,49 @@
 </head>
 
 <body>
-        <nav class="navbar">
-                <a class="hem" href="index.html">Hem</a>
-                <a href="highscore.html">Highscore</a>
-                <a href="omYatzy.html">Om Yatzy</a>
-            </nav>
+    <nav class="navbar">
+        <a class="hem" href="index.html">Hem</a>
+        <a href="highscore.html">Highscore</a>
+        <a href="omYatzy.html">Om Yatzy</a>
+    </nav>
 
     <div class="container">
-    
+
         <a href="index.html"> <img src="img/burning_dice_small.jpg" alt="Extreme Yatzy logo"></a>
         <div class="starleft">
-                <img  src="img/kattstar.png" alt="spinning yatzystars">
-                </div>
-            
-                <div class="starright">
-                        <div>
-                                <input type="checkbox" id="dice1save">
-                                <input type="text" id="dice1" placeholder="Tärningskast" value="0">
-                            </div>
-                            <div>
-                                <input type="checkbox" id="dice2save">
-                                <input type="text" id="dice2" placeholder="Tärningskast" value="0">
-                            </div>
-                            <div>
-                                <input type="checkbox" id="dice3save">
-                                <input type="text" id="dice3">
-                            </div>
-                            <div>
-                                <input type="checkbox" id="dice4save">
-                                <input type="text" id="dice4">
-                            </div>
-                            <div>
-                                <input type="checkbox" id="dice5save">
-                                <input type="text" id="dice5">
-                            </div>
-                    
-                            <div>
-                                <button id="roll">Kasta tärning</button>
-                            </div>                </div>
+            <img src="img/kattstar.png" alt="spinning yatzystars">
+        </div>
+
+        <div class="starright">
+            <div>
+                <input type="checkbox" id="dice1save">
+                <input class="throw" type="text" id="dice1" placeholder="Tärningskast" value="0">
+            </div>
+            <div>
+                <input type="checkbox" id="dice2save">
+                <input class="throw" type="text" id="dice2" placeholder="Tärningskast" value="0">
+            </div>
+            <div>
+                <input type="checkbox" id="dice3save">
+                <input class="throw" type="text" id="dice3">
+            </div>
+            <div>
+                <input type="checkbox" id="dice4save">
+                <input class="throw" type="text" id="dice4">
+            </div>
+            <div>
+                <input type="checkbox" id="dice5save">
+                <input class="throw" type="text" id="dice5">
+            </div>
+
+            <div>
+                <button id="roll">Kasta tärning</button>
+                <select id="choose_input">
+                    <option value="ones">Ettor</option>
+                    <option value="twos">Tvåor</option>
+                </select>
+            </div>
+        </div>
         <table class="box center">
             <tr>
                 <th> Spelare </th>
@@ -108,7 +113,7 @@
             <tr>
                 <th>Summa</th>
 
-                <th><input id="sum1" class="player1 sum" type="number" min="0" max="105" placeholder="score"></th>
+                <th><input id="sum1" class="player sum" type="number" min="0" max="105" placeholder="score"></th>
                 <th><input id="sum2" class="player2 sum" type="number" min="0" max="105" placeholder="score"></th>
                 <th><input id="sum3" class="player3 sum" type="number" min="0" max="105" placeholder="score"></th>
                 <th><input id="sum4" class="player4 sum" type="number" min="0" max="105" placeholder="score"></th>
@@ -136,7 +141,7 @@
             <tr>
                 <td>1 par</td>
 
-                <td><input type="number" min="0" max="12" placeholder="score"></td>
+                <td><input class="player1b 1par" type="number" min="0" max="12" placeholder="score"></td>
                 <td><input type="number" min="0" max="12" placeholder="score"></td>
                 <td><input type="number" min="0" max="12" placeholder="score"></td>
                 <td><input type="number" min="0" max="12" placeholder="score"></td>
@@ -144,7 +149,7 @@
             <tr>
                 <td>2 par</td>
 
-                <td><input type="number" min="0" max="22" placeholder="score"></td>
+                <td><input class="player1b 2par" type="number" min="0" max="22" placeholder="score"></td>
                 <td><input type="number" min="0" max="22" placeholder="score"></td>
                 <td><input type="number" min="0" max="22" placeholder="score"></td>
                 <td><input type="number" min="0" max="22" placeholder="score"></td>
@@ -152,7 +157,7 @@
             <tr>
                 <td>Tretal</td>
 
-                <td><input type="number" min="0" max="18" placeholder="score"></td>
+                <td><input class="player1b tretal" type="number" min="0" max="18" placeholder="score"></td>
                 <td><input type="number" min="0" max="18" placeholder="score"></td>
                 <td><input type="number" min="0" max="18" placeholder="score"></td>
                 <td><input type="number" min="0" max="18" placeholder="score"></td>
@@ -160,7 +165,7 @@
             <tr>
                 <td>Fyrtal</td>
 
-                <td><input type="number" min="0" max="24" placeholder="score"></td>
+                <td><input class="player1b fyrtal" type="number" min="0" max="24" placeholder="score"></td>
                 <td><input type="number" min="0" max="24" placeholder="score"></td>
                 <td><input type="number" min="0" max="24" placeholder="score"></td>
                 <td><input type="number" min="0" max="24" placeholder="score"></td>
@@ -168,23 +173,23 @@
             <tr>
                 <td>Liten stege</td>
 
-                <td><input class="player1 threes" type="number" min="0" max="15" placeholder="score"></td>
-                <td><input class="player1 threes" type="number" min="0" max="15" placeholder="score"></td>
-                <td><input class="player1 threes" type="number" min="0" max="15" placeholder="score"></td>
-                <td><input class="player1 threes" type="number" min="0" max="15" placeholder="score"></td>
+                <td><input class="player1b stegeL" type="number" min="0" max="15" placeholder="score"></td>
+                <td><input class="playe stege" type="number" min="0" max="15" placeholder="score"></td>
+                <td><input class="player threes" type="number" min="0" max="15" placeholder="score"></td>
+                <td><input class="player threes" type="number" min="0" max="15" placeholder="score"></td>
             </tr>
             <tr>
                 <td>Stor stege</td>
 
-                <td><input class="player1 fours" type="number" min="0" max="20" placeholder="score"></td>
-                <td><input class="player1 fours" type="number" min="0" max="20" placeholder="score"></td>
-                <td><input class="player1 fours" type="number" min="0" max="20" placeholder="score"></td>
-                <td><input class="player1 fours" type="number" min="0" max="20" placeholder="score"></td>
+                <td><input class="player1b stegeS" type="number" min="0" max="20" placeholder="score"></td>
+                <td><input class="player fours" type="number" min="0" max="20" placeholder="score"></td>
+                <td><input class="player fours" type="number" min="0" max="20" placeholder="score"></td>
+                <td><input class="player fours" type="number" min="0" max="20" placeholder="score"></td>
             </tr>
             <tr>
                 <td>Kåk</td>
 
-                <td><input type="number" min="0" max="28" placeholder="score"></td>
+                <td><input class="player1b kak" type="number" min="0" max="28" placeholder="score"></td>
                 <td><input type="number" min="0" max="28" placeholder="score"></td>
                 <td><input type="number" min="0" max="28" placeholder="score"></td>
                 <td><input type="number" min="0" max="28" placeholder="score"></td>
@@ -192,10 +197,10 @@
             <tr>
                 <td>Chans</td>
 
-                <td><input class="player1 six" type="number" min="0" max="30" placeholder="score"></td>
-                <td><input class="player1 six" type="number" min="0" max="30" placeholder="score"></td>
-                <td><input class="player1 six" type="number" min="0" max="30" placeholder="score"></td>
-                <td><input class="player1 six" type="number" min="0" max="30" placeholder="score"></td>
+                <td><input class="player1b chans" type="number" min="0" max="30" placeholder="score"></td>
+                <td><input class="player six" type="number" min="0" max="30" placeholder="score"></td>
+                <td><input class="player six" type="number" min="0" max="30" placeholder="score"></td>
+                <td><input class="player six" type="number" min="0" max="30" placeholder="score"></td>
             </tr>
             <tr>
                 <td>Yatzy</td>
@@ -220,15 +225,15 @@
             <tr>
                 <th>Total summa</th>
 
-                <th><input type="number" min="0" max="374" placeholder="score"></th>
+                <th><input class="totalSum1" type="number" min="0" max="374" placeholder="score"></th>
                 <th><input type="number" min="0" max="374" placeholder="score"></th>
                 <th><input type="number" min="0" max="374" placeholder="score"></th>
                 <th><input type="number" min="0" max="374" placeholder="score"></th>
             </tr>
         </table>
-        </div>
     </div>
-<script src="script.js"></script>
+    </div>
+    <script src="script.js"></script>
     <script src="game.js"></script>
 </body>
 

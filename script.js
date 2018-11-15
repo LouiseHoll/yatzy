@@ -1,4 +1,3 @@
-
 /* 
 var playerz = [];
 
@@ -20,9 +19,8 @@ var game = {
 
  
 
-var sum = document.getElementById("sum");
-sum.addEventListener("click", function (event)
-*/
+
+
 
 function checkNaN(player) {
     if (document.getElementsByClassName(player).value === ""){
@@ -43,24 +41,6 @@ function checkNaN(player) {
 
 }
 
-function sumPlayer() {
-    var score = document.getElementsByClassName("player1")
-    var sum = 0;
-    for (let i = 0; i < score.length; i++) {
-        sum += parseInt(checkNaN(score[i]));
-    }
-console.log(sum);
-}
-var ones = document.getElementsByClassName("player1");
-
-for (i = 0; i < ones.length; i++) {
-    ones[i].addEventListener("change", sumPlayer);
-}
-
-
-
-
-
 /*
     var ones = document.getElementsByClassName("player1 ones");
     ones.addEventListener("change", sumPlayer);
@@ -75,3 +55,49 @@ for (i = 0; i < ones.length; i++) {
     var six = document.getElementById("Player1_six");
     six.addEventListener("change", sumPlayer1);
 */
+/* ÖVRE DELEN AV SPELPLANEN */
+/* Sätter eventlisteners på alla inputs i övre delen*/ 
+var inputListeners = document.querySelectorAll(".player1");
+for (var i = 0; i < inputListeners.length; i++) {
+    inputListeners[i].addEventListener("change", sumPlayer);
+}
+/* Räknar ut summan i övre delen*/ 
+function sumPlayer() {
+    var setSum = document.querySelector("#sum1");
+    var score = document.querySelectorAll(".player1");
+    var sum = 0;
+
+    for (let i = 0; i < score.length; i++) {
+        let tempSum = parseInt(score[i].value);
+        if (!isNaN(tempSum)) {
+            sum += tempSum;
+        }
+    }
+    setSum.value = sum;
+}
+
+
+
+/* NEDRE DELEN AV SPELPLANEN */
+/* Sätter eventlisteners på alla inputs i nedre delen*/ 
+
+var inputListeners = document.querySelectorAll(".player1b");
+for (var i = 0; i < inputListeners.length; i++) {
+    inputListeners[i].addEventListener("change", sumPlayerB);
+}
+/* Räknar ut summan i nedre delen*/
+function sumPlayerB() {
+    var setSum = document.querySelector(".totalSum1");
+    var score = document.querySelectorAll(".player1b");
+    var upperScore= document.querySelector("#sum1").value;
+    var tSum = 0;
+
+    for (let i = 0; i < score.length; i++) {
+        let tempSum = parseInt(score[i].value);
+        if (!isNaN(tempSum)) {
+            tSum += tempSum;
+        }
+    }
+    setSum.value =parseInt(upperScore)+tSum;
+}
+

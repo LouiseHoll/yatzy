@@ -14,3 +14,7 @@ function saveDice() {
 
 var roll = document.getElementById("roll");
 roll.addEventListener("click", saveDice);
+
+
+//placerar värdet av tärningarna i rätt ruta
+var sumOfThrow = document.querySelectorAll(".throw");
