@@ -17,6 +17,12 @@ roll.addEventListener("click", saveDice);
 var roll = document.getElementById("count");
 roll.addEventListener("click", sumOfThrow);
 
+$(document).ready(function () {
+    $("#roll").click(function () {
+        $('.transform').toggleClass('transform-active');
+    });
+ });
+
 function sumOfThrow() {
     var sumOfThrow = document.querySelectorAll(".throw");
     var skrivHar = document.querySelector("#countHere");
