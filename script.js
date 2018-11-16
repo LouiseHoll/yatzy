@@ -75,7 +75,7 @@ function sumPlayer(playerNo) {
         }
     }
 
-    setSum.value = sum;
+    setSum.innerHTML = sum;
     if (sum >= 63) {
 
         bonus1.innerHTML = "50";
@@ -94,19 +94,19 @@ for (var i = 0; i < inputListeners.length; i++) {
 function sumPlayerB() {
     var setSum = document.querySelector(".totalSum1");
     var score = document.querySelectorAll(".player1b");
-    var upperScore = document.querySelector("#sum1").value;
+    var upperScore = document.querySelector("#sum1").innerHTML;
     var tSum = 0;
-
     for (let i = 0; i < score.length; i++) {
         let tempSum = parseInt(score[i].value);
         if (!isNaN(tempSum)) {
             tSum += tempSum;
         }
-    }
+    }              
+
     if (bonus1.innerHTML == "50") {
-        setSum.value = parseInt(upperScore) + tSum + 50;
+        setSum.innerHTML = parseInt(upperScore) + tSum + 50;
     } else {
-        setSum.value = parseInt(upperScore) + tSum;
+        setSum.innerHTML = parseInt(upperScore) + tSum;
     }
 }
 // PLAYER 2==========================================================
