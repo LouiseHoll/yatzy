@@ -62,7 +62,7 @@ for (var i = 0; i < inputListeners.length; i++) {
     inputListeners[i].addEventListener("change", sumPlayer, 1);
 }
 /* Räknar ut summan i övre delen*/
-function sumPlayer(playerNo) {
+function sumPlayer() {
     var bonus1 = document.querySelector("#bonus1");
     var setSum = document.querySelector("#sum1");
     var score = document.querySelectorAll(".player1");
@@ -91,8 +91,10 @@ for (var i = 0; i < inputListeners.length; i++) {
     inputListeners[i].addEventListener("change", sumPlayerB);
 }
 /* Räknar ut summan i nedre delen*/
+
 function sumPlayerB() {
     var setSum = document.querySelector(".totalSum1");
+    var setSum2 = document.querySelector(".totalSum2");
     var score = document.querySelectorAll(".player1b");
     var upperScore = document.querySelector("#sum1").innerHTML;
     var tSum = 0;
@@ -101,12 +103,20 @@ function sumPlayerB() {
         if (!isNaN(tempSum)) {
             tSum += tempSum;
         }
-    }              
+    }
 
     if (bonus1.innerHTML == "50") {
         setSum.innerHTML = parseInt(upperScore) + tSum + 50;
     } else {
         setSum.innerHTML = parseInt(upperScore) + tSum;
+    }
+
+    if (setSum.innerHTML > setSum2.innerHTML) {
+        setSum.setAttribute("id", "leader");
+        setSum2.setAttribute("id", "");
+    } else {
+        setsum2.setAttribute("id", "leader");
+        setSum.setAttribute("id", "");
     }
 }
 // PLAYER 2==========================================================
@@ -130,7 +140,7 @@ function sumPlayer2() {
         }
     }
 
-    setSum2.value = sum2;
+    setSum2.innerHTML = sum2;
     if (sum2 >= 63) {
 
         bonus2.innerHTML = "50";
@@ -148,9 +158,10 @@ for (var i = 0; i < inputListenersP2.length; i++) {
 }
 /* Räknar ut summan i nedre delen*/
 function sumPlayerB2() {
+    var setSum = document.querySelector(".totalSum1");
     var setSum2 = document.querySelector(".totalSum2");
     var score2 = document.querySelectorAll(".player2b");
-    var upperScore2 = document.querySelector("#sum2").value;
+    var upperScore2 = document.querySelector("#sum2").innerHTML;
     var tSum2 = 0;
 
     console.log(upperScore2);
@@ -162,8 +173,16 @@ function sumPlayerB2() {
         }
     }
     if (bonus2.innerHTML == "50") {
-        setSum2.value = parseInt(upperScore2) + tSum2 + 50;
+        setSum2.innerHTML = parseInt(upperScore2) + tSum2 + 50;
     } else {
-        setSum2.value = parseInt(upperScore2) + tSum2;
+        setSum2.innerHTML = parseInt(upperScore2) + tSum2;
+    }
+
+    if (setSum.innerHTML < setSum2.innerHTML) {
+        setSum2.setAttribute("id", "leader");
+        setSum.setAttribute("id", "");
+    } else {
+        setsum.setAttribute("id", "leader");
+        setSum2.setAttribute("id", "");
     }
 }
