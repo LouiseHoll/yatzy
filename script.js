@@ -105,6 +105,10 @@ function sumPlayerB() {
         }
     }
 
+    var yatzy = document.querySelector(".yatzy1").value;
+    tSum += parseInt(yatzy);
+
+
     if (bonus1.innerHTML == "50") {
         setSum.innerHTML = parseInt(upperScore) + tSum + 50;
     } else {
@@ -154,7 +158,6 @@ var inputListenersP2 = document.querySelectorAll(".player2b");
 
 for (var i = 0; i < inputListenersP2.length; i++) {
     inputListenersP2[i].addEventListener("change", sumPlayerB2);
-    console.log("hej hej!")
 }
 /* Räknar ut summan i nedre delen*/
 function sumPlayerB2() {
@@ -172,6 +175,9 @@ function sumPlayerB2() {
             tSum2 += tempSum2;
         }
     }
+
+    var yatzy = document.querySelector(".yatzy2").value;
+    tSum2 += parseInt(yatzy);
     if (bonus2.innerHTML == "50") {
         setSum2.innerHTML = parseInt(upperScore2) + tSum2 + 50;
     } else {
